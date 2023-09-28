@@ -2,40 +2,45 @@ import java.util.Arrays;
 
 public class MainTest {
 
-//Имея два отсортированных массива размера m и n соответственно, вам нужно найти элемент,
-// который будет находиться на k-й позиции в конечном отсортированном массиве.
-//Массив 1 - 100 112 256 349 770
-//Массив 2 - 72 86 113 119 265 445 892
-//к = 7
-//Вывод : 256
-//Окончательный отсортированный массив -
-//72, 86, 100, 112, 113, 119, 256, 265, 349, 445, 770, 892
-//7-й элемент этого массива равен 256.
 
     public static void main(String[] args) {
-        int[] m = {5, 6, 7, 8, 9, 10, 11, 12};
-        int[] n = {2, 3};
-        int k = 4;
-        System.out.println(getElement(m, n, k));
-    }
-
-    static int getElement(int[] a, int[] b, int e) {
-        int aIndex = 0;
-        int bIndex = 0;
-        int result = 0;
-        int i = 0;
-        while (i < e) {
-            if ((a[aIndex] < b[bIndex]) || (aIndex < a.length - 1)) {
-                result = a[aIndex];
-                aIndex++;
-            } else {
-                result = b[bIndex];
-                if (bIndex < b.length - 1) {
-                    bIndex++;
-                }
-            }
-            i++;
-        }
-        return result;
+        DynamicArray dynamicArray = new DynamicArray();
+        System.out.println(dynamicArray);
+        dynamicArray.add(1);
+        System.out.println(dynamicArray);
+        dynamicArray.add(2);
+        dynamicArray.add(3);
+        dynamicArray.add(4);
+        dynamicArray.add(5);
+        System.out.println(dynamicArray);
+        dynamicArray.remove();
+        System.out.println(dynamicArray);
+        dynamicArray.remove();
+//        System.out.println(dynamicArray);
+        dynamicArray.add(4);
+        dynamicArray.add(5);
+        System.out.println(dynamicArray);
+        dynamicArray.removeAt(3);
+        System.out.println(dynamicArray);
+        dynamicArray.add(4);
+        System.out.println(dynamicArray);
+        dynamicArray.setValue(3, 6);
+        System.out.println(dynamicArray);
+        dynamicArray.clean();
+        System.out.println(dynamicArray);
+        System.out.println(dynamicArray.isEmpty());
+        System.out.println(dynamicArray);
+        dynamicArray.add(1);
+        System.out.println(dynamicArray.isEmpty());
+        System.out.println(dynamicArray);
+        dynamicArray.add(2);
+        System.out.println(dynamicArray);
+        dynamicArray.add(3);
+        System.out.println(dynamicArray);
+        dynamicArray.add(4);
+        dynamicArray.add(5);
+        System.out.println(dynamicArray);
+        System.out.println(dynamicArray.contains(5));
+        System.out.println(dynamicArray.isEmpty());
     }
 }
