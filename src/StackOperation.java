@@ -41,7 +41,7 @@ public class StackOperation {
         return size == 0;
     }
 
-    public void getMinAndRecoverStack() {
+    public int getMinAndRecoverStack() {
         int[] recoverArr = new int[size];
         Stack<Integer> recoverStack = new Stack<>();
         int index = 0;
@@ -57,7 +57,7 @@ public class StackOperation {
         for (int i = recoverArr.length - 1; i >= 0; i--) {
             this.push(recoverArr[i]);
         }
-        System.out.println("minimum - " + min);
+        return min;
     }
 
 
@@ -103,7 +103,8 @@ public class StackOperation {
         stackOperation.push(2);
         System.out.println(stackOperation);
         System.out.println(stackOperation.isEmpty());
-        stackOperation.getMinAndRecoverStack();
+        System.out.println(stackOperation.getMinAndRecoverStack());
+
         System.out.println(stackOperation);
 
 
